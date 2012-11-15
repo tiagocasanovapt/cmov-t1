@@ -54,8 +54,8 @@ class PathsController < ApplicationController
 				render :json=>{"stops"=>@stops, "preco"=>@totalDist*Price.first[:price]}
 			else
 				middle = 9
-				@paths1 = Path.findPaths({:station_first =>params[:station_first], :station_last=>middle })
-				@paths2 = Path.findPaths({:station_first=>middle, :station_last=>params[:station_last] })
+				@paths1 = Path.findPaths({:station_first =>params[:station_first], :station_last=>middle }).order(:start_time)
+				@paths2 = Path.findPaths({:station_first=>middle, :station_last=>params[:station_last] }).order(:start_time)
 
 				@paths1.each do |p|
 					if @stops.nil?
@@ -106,7 +106,7 @@ class PathsController < ApplicationController
 
 			@lines.each do |l|
 				if l.stations.include?(@s1) && l.stations.include?(@s2)
-					@paths = l.paths.where("direction = (?)",@dir)
+					@paths = l.paths.where("direction = (?)",@dir).order(:start_time)
 				end
 			end
 

@@ -7,8 +7,14 @@ class Reservation < ActiveRecord::Base
 	
 
 	def self.makePayment(res)
-		res.paid = true;
-		res.ticket = Base64.encode64(UUIDTools::UUID.random_create)[0..7]
+
+		random = Random.rand(10)
+
+		if random > 0
+			res.paid = true
+			res.ticket = Base64.encode64(UUIDTools::UUID.random_create)[0..7]
+		end
+
 		res
 	end
 end

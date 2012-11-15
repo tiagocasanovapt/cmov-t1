@@ -5,17 +5,27 @@ class ReservationsController < ApplicationController
  # respond_to :json
 
 	def index
-	   	@reservs = @logged_user.reservations
+	   	@reservs = @logged_user.reservations.where("reserv_date >= ?", Date.today)
 	    render :json => @reservs, :include => [:first_station, :last_station]
 	end
 
 	def create
-		
 	    @reserve = Reservation.new(params[:reservation])
 	    @reserve.user = @logged_user;
 
-        if @reserve.save
-	       render json: @reserve, status: :created, location: @reserve 
+	    @act_path = Path.find(@reserve.path_id)
+	    @res = Reservation.where("path_id = ? AND reserv_date = ?",@act_path.id,@reserve.reserv_date).count
+	    
+	    if @res >= @act_path.capacity
+	    	render json: {:message => "Sold out tickets"}
+	    elsif @reserve.reserv_date < Date.today
+	    	render json: {:message=>"Invalid date"}
+        elsif @reserve.save
+           	if @reserve.reserv_date-24.hours < Time.now
+				@reserve = Reservation.makePayment(r)
+				@reserv.save
+			end
+	       render json: @reserve, status: :created 
         else
 	       render json: @reserve.errors, status: :unprocessable_entity
 	      end
