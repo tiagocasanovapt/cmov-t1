@@ -3,33 +3,251 @@
 
 <br />
 <table class="views-table cols-2" >
-      <caption style="padding-left:80px;"><a title="Timelines" id="109" name="109"></a><strong>Timelines</strong><p> Timelines are collections of Tweets, ordered with the most recent first. </p></caption>
+      <caption style="padding-left:80px;"><a title="Timelines" id="109" name="109"></a><strong>Utilizadores</strong></caption>
     <thead>
     <tr>
               <th class="views-field views-field-title" style="padding-left:80px;">
-          Resource        </th>
+          Recursos        </th>
+          <th class="views-field views-field-title" style="padding-left:80px;">
+          Parâmetros        </th>
               <th class="views-field views-field-body">
-          Description        </th>
+          Descrição        </th>
           </tr>
   </thead>
   <tbody>
           <tr class="odd views-row-first" >
                   <td class="views-field views-field-title" style="padding-left:80px;">
-            <a href="/docs/api/1.1/get/statuses/mentions_timeline" >GET statuses/mentions_timeline</a>          </td>
+            <a href="#" >POST /register.json</a>          </td>
+                  <td class="views-field views-field-title" style="padding-left:80px;">
+                          name, email, password, password_confirmation, credit_attributes{card_type, number, cvv, expiration}
+                                    </td>
                   <td class="views-field views-field-body" style="padding-right:80px;">
-            Returns the 20 most recent mentions (tweets containing a users's @screen_name) for the authenticating user.
-The timeline returned is the equivalent of the one seen when you view your mentions on twitter.com.
-This method can only return up to 800 tweets.
-See Working with Timelines for...          </td>
+            Registo de um novo utilizador          </td>
               </tr>
           <tr class="even">
                   <td class="views-field views-field-title" style="padding-left:80px;">
-            <a href="/docs/api/1.1/get/statuses/user_timeline">GET statuses/user_timeline</a>          </td>
+            <a href="#">POST /users/update_info.json</a>          </td>
+            <td class="views-field views-field-title" style="padding-left:80px;">
+                          name, email, password, password_confirmation, credit_attributes{card_type, number, cvv, expiration}          </td>
                   <td class="views-field views-field-body" style="padding-right:80px;">
-            Returns a collection of the most recent Tweets posted by the user indicated by the screen_name or user_id parameters.
-User timelines belonging to protected users may only be requested when the authenticated user either "owns" the timeline or is an approved follower of the owner.
-The timeline...          </td>
+           Editar perfil de um utilizador          </td>
+              </tr>
+              <tr class="odd">
+                  <td class="views-field views-field-title" style="padding-left:80px;">
+            <a href="#">POST /login.json</a>          </td>
+            <td class="views-field views-field-title" style="padding-left:80px;">
+                          email, password          </td>
+                  <td class="views-field views-field-body" style="padding-right:80px;">
+           Login de um utilizador          </td>
               </tr>
 			  </table>
+
+<table class="views-table cols-2" >
+      <caption style="padding-left:80px;"><a title="Timelines" id="109" name="109"></a><strong>Pesquisa</strong></caption>
+    <thead>
+    <tr>
+              <th class="views-field views-field-title" style="padding-left:80px;">
+          Recursos        </th>
+          <th class="views-field views-field-title" style="padding-left:80px;">
+          Parâmetros        </th>
+              <th class="views-field views-field-body">
+          Descrição        </th>
+          </tr>
+  </thead>
+  <tbody>
+          <tr class="odd views-row-first" >
+                  <td class="views-field views-field-title" style="padding-left:80px;">
+            <a href="#" >GET /stations.json</a>          </td>
+                  <td class="views-field views-field-title" style="padding-left:80px;">
+                          auth_token
+                                    </td>
+                  <td class="views-field views-field-body" style="padding-right:80px;">
+            Nome das estações existentes na linha          </td>
+              </tr>
+          <tr class="even">
+                  <td class="views-field views-field-title" style="padding-left:80px;">
+            <a href="#">GET /paths/search.json</a>          </td>
+            <td class="views-field views-field-title" style="padding-left:80px;">
+                          auth_token, station_first, station_last          </td>
+                  <td class="views-field views-field-body" style="padding-right:80px;">
+            Percursos possíveis entre duas estações         </td>
+              </tr>
+              <tr class="odd">
+                  <td class="views-field views-field-title" style="padding-left:80px;">
+            <a href="#">GET /stops.json</a>          </td>
+            <td class="views-field views-field-title" style="padding-left:80px;">
+                          auth_token, path_id, station_first, station_last          </td>
+                  <td class="views-field views-field-body" style="padding-right:80px;">
+           Paragens entre duas estações num determinado percurso         </td>
+              </tr>
+        </table>
+
+<table class="views-table cols-2" >
+      <caption style="padding-left:80px;"><a title="Timelines" id="109" name="109"></a><strong>Reservas</strong></caption>
+    <thead>
+    <tr>
+              <th class="views-field views-field-title" style="padding-left:80px;">
+          Recursos        </th>
+          <th class="views-field views-field-title" style="padding-left:80px;">
+          Parâmetros        </th>
+              <th class="views-field views-field-body">
+          Descrição        </th>
+          </tr>
+  </thead>
+  <tbody>
+          <tr class="odd views-row-first" >
+                  <td class="views-field views-field-title" style="padding-left:80px;">
+            <a href="#" >POST /reserve.json</a>          </td>
+                  <td class="views-field views-field-title" style="padding-left:80px;">
+                          auth_token, reservation {path_id, first_station_id, last_station_id, reserv_date}
+                                    </td>
+                  <td class="views-field views-field-body" style="padding-right:80px;">
+            Nova reserva          </td>
+              </tr>
+          <tr class="even">
+                  <td class="views-field views-field-title" style="padding-left:80px;">
+            <a href="#">GET /stations.json</a>          </td>
+            <td class="views-field views-field-title" style="padding-left:80px;">
+                          auth_token, station_id          </td>
+                  <td class="views-field views-field-body" style="padding-right:80px;">
+            Estações de destino possíveis numa linha a partir de uma estação         </td>
+              </tr>
+              <tr class="odd">
+                  <td class="views-field views-field-title" style="padding-left:80px;">
+            <a href="#">POST /stopsPath.json</a>          </td>
+            <td class="views-field views-field-title" style="padding-left:80px;">
+                          auth_token, station_first, station_last          </td>
+                  <td class="views-field views-field-body" style="padding-right:80px;">
+           Paragens entre duas estações         </td>
+              </tr>
+              <tr class="even">
+                  <td class="views-field views-field-title" style="padding-left:80px;">
+            <a href="#">GET /stops.json</a>          </td>
+            <td class="views-field views-field-title" style="padding-left:80px;">
+                          auth_token, path_id          </td>
+                  <td class="views-field views-field-body" style="padding-right:80px;">
+            Estações de destino possíveis num determinado path        </td>
+              </tr>
+              <tr class="odd">
+                  <td class="views-field views-field-title" style="padding-left:80px;">
+            <a href="#">GET /reservations.json</a>          </td>
+            <td class="views-field views-field-title" style="padding-left:80px;">
+                          auth_token          </td>
+                  <td class="views-field views-field-body" style="padding-right:80px;">
+           Lista de reservas de um utilizador         </td>
+              </tr>
+              <tr class="even">
+                  <td class="views-field views-field-title" style="padding-left:80px;">
+            <a href="#">GET /reservations/:id/payReservation.json</a>          </td>
+            <td class="views-field views-field-title" style="padding-left:80px;">
+                          auth_token          </td>
+                  <td class="views-field views-field-body" style="padding-right:80px;">
+            Pagamento de uma reserva        </td>
+              </tr>
+              <tr class="odd">
+                  <td class="views-field views-field-title" style="padding-left:80px;">
+            <a href="#">GET /reservations/cancel.json</a>          </td>
+            <td class="views-field views-field-title" style="padding-left:80px;">
+                          auth_token, id          </td>
+                  <td class="views-field views-field-body" style="padding-right:80px;">
+           Cancelamento de uma reserva         </td>
+              </tr>
+               <tr class="even">
+                  <td class="views-field views-field-title" style="padding-left:80px;">
+            <a href="#">GET /reservations/:id/ticket.pdf</a>          </td>
+            <td class="views-field views-field-title" style="padding-left:80px;">
+                          auth_token          </td>
+                  <td class="views-field views-field-body" style="padding-right:80px;">
+            Visualização do PDF do bilhete da reserva        </td>
+              </tr>
+        </table>
+
+<table class="views-table cols-2" >
+      <caption style="padding-left:80px;"><a title="Timelines" id="109" name="109"></a><strong>Linhas</strong></caption>
+    <thead>
+    <tr>
+              <th class="views-field views-field-title" style="padding-left:80px;">
+          Recursos        </th>
+          <th class="views-field views-field-title" style="padding-left:80px;">
+          Parâmetros        </th>
+              <th class="views-field views-field-body">
+          Descrição        </th>
+          </tr>
+  </thead>
+  <tbody>
+          <tr class="odd views-row-first" >
+                  <td class="views-field views-field-title" style="padding-left:80px;">
+            <a href="#" >GET /lines.json</a>          </td>
+                  <td class="views-field views-field-title" style="padding-left:80px;">
+                          auth_token
+                                    </td>
+                  <td class="views-field views-field-body" style="padding-right:80px;">
+            Linhas disponíveis para consulta          </td>
+              </tr>
+          <tr class="even">
+                  <td class="views-field views-field-title" style="padding-left:80px;">
+            <a href="#">GET /paths.json</a>          </td>
+            <td class="views-field views-field-title" style="padding-left:80px;">
+                          auth_token, line_id          </td>
+                  <td class="views-field views-field-body" style="padding-right:80px;">
+            Percursos disponíveis em ambas as direções para uma linha         </td>
+              </tr>
+        </table>
+
+<table class="views-table cols-2" >
+      <caption style="padding-left:80px;"><a title="Timelines" id="109" name="109"></a><strong>Inspector</strong></caption>
+    <thead>
+    <tr>
+              <th class="views-field views-field-title" style="padding-left:80px;">
+          Recursos        </th>
+          <th class="views-field views-field-title" style="padding-left:80px;">
+          Parâmetros        </th>
+              <th class="views-field views-field-body">
+          Descrição        </th>
+          </tr>
+  </thead>
+  <tbody>
+          <tr class="odd views-row-first" >
+                  <td class="views-field views-field-title" style="padding-left:80px;">
+            <a href="#" >GET /stations/iniStations.json</a>          </td>
+                  <td class="views-field views-field-title" style="padding-left:80px;">
+                          auth_token
+                                    </td>
+                  <td class="views-field views-field-body" style="padding-right:80px;">
+            Estações iniciais/finais de cada linha          </td>
+              </tr>
+          <tr class="even">
+                  <td class="views-field views-field-title" style="padding-left:80px;">
+            <a href="#">POST /pathsSupervisor.json</a>          </td>
+            <td class="views-field views-field-title" style="padding-left:80px;">
+                          auth_token, station_id, time          </td>
+                  <td class="views-field views-field-body" style="padding-right:80px;">
+            Percursos disponíveis a partir da estação e horas dadas         </td>
+              </tr>
+              <tr class="even">
+                  <td class="views-field views-field-title" style="padding-left:80px;">
+            <a href="#">GET /reservations/:path_id/getTickets.json</a>          </td>
+            <td class="views-field views-field-title" style="padding-left:80px;">
+                          auth_token, date          </td>
+                  <td class="views-field views-field-body" style="padding-right:80px;">
+            Download dos bilhetes do percurso escolhido para o dia atual        </td>
+              </tr>
+              <tr class="even">
+                  <td class="views-field views-field-title" style="padding-left:80px;">
+            <a href="#">GET /paths/:path_id/connections.json</a>          </td>
+            <td class="views-field views-field-title" style="padding-left:80px;">
+                          auth_token          </td>
+                  <td class="views-field views-field-body" style="padding-right:80px;">
+            Conexões entre todas as estações de um dado percurso        </td>
+              </tr>
+              <tr class="even">
+                  <td class="views-field views-field-title" style="padding-left:80px;">
+            <a href="#">POST /reservations/updateVerified.json</a>          </td>
+            <td class="views-field views-field-title" style="padding-left:80px;">
+                          auth_token, [{:ticket_id}]          </td>
+                  <td class="views-field views-field-body" style="padding-right:80px;">
+            Upload dos bilhetes verificados        </td>
+              </tr>
+        </table>
  
 <br />
