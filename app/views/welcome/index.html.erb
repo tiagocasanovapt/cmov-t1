@@ -8,9 +8,9 @@
     <tr>
               <th class="views-field views-field-title" style="padding-left:80px;">
           Recursos        </th>
-          <th class="views-field views-field-title" style="padding-left:80px;">
+          <th class="views-field views-field-title" style="padding-left:95px;">
           Parâmetros        </th>
-              <th class="views-field views-field-body">
+              <th class="views-field views-field-body" style="padding-right:140px;">
           Descrição        </th>
           </tr>
   </thead>
@@ -18,7 +18,7 @@
           <tr class="odd views-row-first" >
                   <td class="views-field views-field-title" style="padding-left:80px;">
             <a href="#" >POST /register.json</a>          </td>
-                  <td class="views-field views-field-title" style="padding-left:80px;">
+                  <td class="views-field views-field-title" style="padding-left:95px;">
                           name, email, password, password_confirmation, <br>
                           credit_attributes {card_type, number, cvv, expiration}
                                     </td>
@@ -28,15 +28,15 @@
           <tr class="even">
                   <td class="views-field views-field-title" style="padding-left:80px;">
             <a href="#">POST /users/update_info.json</a>          </td>
-            <td class="views-field views-field-title" style="padding-left:80px;">
-                          name, email, password, password_confirmation, <br>credit_attributes{card_type, number, cvv, expiration}          </td>
+            <td class="views-field views-field-title" style="padding-left:95px;">
+                          name, email, password, password_confirmation, <br>credit_attributes {card_type, number, cvv, expiration}          </td>
                   <td class="views-field views-field-body" style="padding-right:80px;">
            Editar perfil de um utilizador          </td>
               </tr>
               <tr class="odd">
                   <td class="views-field views-field-title" style="padding-left:80px;">
             <a href="#">POST /login.json</a>          </td>
-            <td class="views-field views-field-title" style="padding-left:80px;">
+            <td class="views-field views-field-title" style="padding-left:95px;">
                           email, password          </td>
                   <td class="views-field views-field-body" style="padding-right:80px;">
            Login de um utilizador          </td>
@@ -49,7 +49,7 @@
     <tr>
               <th class="views-field views-field-title" style="padding-left:80px;">
           Recursos        </th>
-          <th class="views-field views-field-title" style="padding-left:80px;">
+          <th class="views-field views-field-title" style="padding-left:85px;">
           Parâmetros        </th>
               <th class="views-field views-field-body">
           Descrição        </th>
@@ -59,7 +59,7 @@
           <tr class="odd views-row-first" >
                   <td class="views-field views-field-title" style="padding-left:80px;">
             <a href="#" >GET /stations.json</a>          </td>
-                  <td class="views-field views-field-title" style="padding-left:80px;">
+                  <td class="views-field views-field-title" style="padding-left:85px;">
                           auth_token
                                     </td>
                   <td class="views-field views-field-body" style="padding-right:80px;">
@@ -68,7 +68,7 @@
           <tr class="even">
                   <td class="views-field views-field-title" style="padding-left:80px;">
             <a href="#">GET /paths/search.json</a>          </td>
-            <td class="views-field views-field-title" style="padding-left:80px;">
+            <td class="views-field views-field-title" style="padding-left:85px;">
                           auth_token, station_first, station_last          </td>
                   <td class="views-field views-field-body" style="padding-right:80px;">
             Percursos possíveis entre duas estações         </td>
@@ -76,7 +76,7 @@
               <tr class="odd">
                   <td class="views-field views-field-title" style="padding-left:80px;">
             <a href="#">GET /stops.json</a>          </td>
-            <td class="views-field views-field-title" style="padding-left:80px;">
+            <td class="views-field views-field-title" style="padding-left:85px;">
                           auth_token, path_id, station_first, station_last          </td>
                   <td class="views-field views-field-body" style="padding-right:80px;">
            Paragens entre duas estações num determinado percurso         </td>
@@ -89,9 +89,9 @@
     <tr>
               <th class="views-field views-field-title" style="padding-left:80px;">
           Recursos        </th>
-          <th class="views-field views-field-title" style="padding-left:80px;">
+          <th class="views-field views-field-title" style="padding-left:0px;">
           Parâmetros        </th>
-              <th class="views-field views-field-body">
+              <th class="views-field views-field-body" style="padding-right:55px;">
           Descrição        </th>
           </tr>
   </thead>
@@ -99,7 +99,7 @@
           <tr class="odd views-row-first" >
                   <td class="views-field views-field-title" style="padding-left:80px;">
             <a href="#" >POST /reserve.json</a>          </td>
-                  <td class="views-field views-field-title" style="padding-left:80px;">
+                  <td class="views-field views-field-title" style="padding-left:0px;">
                           auth_token, reservation {path_id, first_station_id, last_station_id, reserv_date}
                                     </td>
                   <td class="views-field views-field-body" style="padding-right:80px;">
@@ -108,7 +108,7 @@
               <tr class="odd">
                   <td class="views-field views-field-title" style="padding-left:80px;">
             <a href="#">POST /stopsPath.json</a>          </td>
-            <td class="views-field views-field-title" style="padding-left:80px;">
+            <td class="views-field views-field-title" style="padding-left:0px;">
                           auth_token, station_first, station_last          </td>
                   <td class="views-field views-field-body" style="padding-right:80px;">
            Paragens entre duas estações         </td>
@@ -116,7 +116,7 @@
           <tr class="even">
                   <td class="views-field views-field-title" style="padding-left:80px;">
             <a href="#">GET /stations.json</a>          </td>
-            <td class="views-field views-field-title" style="padding-left:80px;">
+            <td class="views-field views-field-title" style="padding-left:0px;">
                           auth_token, station_id          </td>
                   <td class="views-field views-field-body" style="padding-right:80px;">
             Estações de destino possíveis numa linha a partir de uma estação         </td>
@@ -124,7 +124,7 @@
               <tr class="even">
                   <td class="views-field views-field-title" style="padding-left:80px;">
             <a href="#">GET /stops.json</a>          </td>
-            <td class="views-field views-field-title" style="padding-left:80px;">
+            <td class="views-field views-field-title" style="padding-left:0px;">
                           auth_token, path_id          </td>
                   <td class="views-field views-field-body" style="padding-right:80px;">
             Estações de destino possíveis num determinado path        </td>
@@ -132,7 +132,7 @@
               <tr class="odd">
                   <td class="views-field views-field-title" style="padding-left:80px;">
             <a href="#">GET /reservations.json</a>          </td>
-            <td class="views-field views-field-title" style="padding-left:80px;">
+            <td class="views-field views-field-title" style="padding-left:0px;">
                           auth_token          </td>
                   <td class="views-field views-field-body" style="padding-right:80px;">
            Lista de reservas de um utilizador         </td>
@@ -140,7 +140,7 @@
               <tr class="even">
                   <td class="views-field views-field-title" style="padding-left:80px;">
             <a href="#">GET /reservations/:id/payReservation.json</a>          </td>
-            <td class="views-field views-field-title" style="padding-left:80px;">
+            <td class="views-field views-field-title" style="padding-left:0px;">
                           auth_token          </td>
                   <td class="views-field views-field-body" style="padding-right:80px;">
             Pagamento de uma reserva        </td>
@@ -148,7 +148,7 @@
               <tr class="odd">
                   <td class="views-field views-field-title" style="padding-left:80px;">
             <a href="#">GET /reservations/cancel.json</a>          </td>
-            <td class="views-field views-field-title" style="padding-left:80px;">
+            <td class="views-field views-field-title" style="padding-left:0px;">
                           auth_token, id          </td>
                   <td class="views-field views-field-body" style="padding-right:80px;">
            Cancelamento de uma reserva         </td>
@@ -156,7 +156,7 @@
                <tr class="even">
                   <td class="views-field views-field-title" style="padding-left:80px;">
             <a href="#">GET /reservations/:id/ticket.pdf</a>          </td>
-            <td class="views-field views-field-title" style="padding-left:80px;">
+            <td class="views-field views-field-title" style="padding-left:0px;">
                           auth_token          </td>
                   <td class="views-field views-field-body" style="padding-right:80px;">
             Visualização do PDF do bilhete da reserva        </td>
@@ -169,9 +169,9 @@
     <tr>
               <th class="views-field views-field-title" style="padding-left:80px;">
           Recursos        </th>
-          <th class="views-field views-field-title" style="padding-left:80px;">
+          <th class="views-field views-field-title" style="padding-left:90px;">
           Parâmetros        </th>
-              <th class="views-field views-field-body">
+              <th class="views-field views-field-body" style="padding-left:80px;">
           Descrição        </th>
           </tr>
   </thead>
@@ -179,18 +179,18 @@
           <tr class="odd views-row-first" >
                   <td class="views-field views-field-title" style="padding-left:80px;">
             <a href="#" >GET /lines.json</a>          </td>
-                  <td class="views-field views-field-title" style="padding-left:80px;">
+                  <td class="views-field views-field-title" style="padding-left:90px;">
                           auth_token
                                     </td>
-                  <td class="views-field views-field-body" style="padding-right:80px;">
+                  <td class="views-field views-field-body" style="padding-left:80px;">
             Linhas disponíveis para consulta          </td>
               </tr>
           <tr class="even">
                   <td class="views-field views-field-title" style="padding-left:80px;">
             <a href="#">GET /paths.json</a>          </td>
-            <td class="views-field views-field-title" style="padding-left:80px;">
+            <td class="views-field views-field-title" style="padding-left:90px;">
                           auth_token, line_id          </td>
-                  <td class="views-field views-field-body" style="padding-right:80px;">
+                  <td class="views-field views-field-body" style="padding-left:80px;">
             Percursos disponíveis em ambas as direções para uma linha         </td>
               </tr>
         </table>
@@ -201,9 +201,9 @@
     <tr>
               <th class="views-field views-field-title" style="padding-left:80px;">
           Recursos        </th>
-          <th class="views-field views-field-title" style="padding-left:80px;">
+          <th class="views-field views-field-title" style="padding-left:20px;padding-right:110px;">
           Parâmetros        </th>
-              <th class="views-field views-field-body">
+              <th class="views-field views-field-body" style="padding-right:90px;">
           Descrição        </th>
           </tr>
   </thead>
@@ -211,7 +211,7 @@
           <tr class="odd views-row-first" >
                   <td class="views-field views-field-title" style="padding-left:80px;">
             <a href="#" >GET /stations/iniStations.json</a>          </td>
-                  <td class="views-field views-field-title" style="padding-left:80px;">
+                  <td class="views-field views-field-title" style="padding-left:20px;">
                           auth_token
                                     </td>
                   <td class="views-field views-field-body" style="padding-right:80px;">
@@ -220,7 +220,7 @@
               <tr class="even">
                   <td class="views-field views-field-title" style="padding-left:80px;">
             <a href="#">GET /reservations/:path_id/getTickets.json</a>          </td>
-            <td class="views-field views-field-title" style="padding-left:80px;">
+            <td class="views-field views-field-title" style="padding-left:20px;">
                           auth_token, date          </td>
                   <td class="views-field views-field-body" style="padding-right:80px;">
             Download dos bilhetes do percurso escolhido para o dia atual        </td>
@@ -228,7 +228,7 @@
               <tr class="even">
                   <td class="views-field views-field-title" style="padding-left:80px;">
             <a href="#">GET /paths/:path_id/connections.json</a>          </td>
-            <td class="views-field views-field-title" style="padding-left:80px;">
+            <td class="views-field views-field-title" style="padding-left:20px;">
                           auth_token          </td>
                   <td class="views-field views-field-body" style="padding-right:80px;">
             Conexões entre todas as estações de um dado percurso        </td>
@@ -236,7 +236,7 @@
               <tr class="even">
                   <td class="views-field views-field-title" style="padding-left:80px;">
             <a href="#">POST /reservations/updateVerified.json</a>          </td>
-            <td class="views-field views-field-title" style="padding-left:80px;">
+            <td class="views-field views-field-title" style="padding-left:20px;">
                           auth_token, [{:ticket_id}]          </td>
                   <td class="views-field views-field-body" style="padding-right:80px;">
             Upload dos bilhetes verificados        </td>
@@ -244,7 +244,7 @@
               <tr class="even">
                   <td class="views-field views-field-title" style="padding-left:80px;">
             <a href="#">POST /pathsSupervisor.json</a>          </td>
-            <td class="views-field views-field-title" style="padding-left:80px;">
+            <td class="views-field views-field-title" style="padding-left:20px;">
                           auth_token, station_id, time          </td>
                   <td class="views-field views-field-body" style="padding-right:80px;">
             Percursos disponíveis a partir da estação e horas dadas         </td>
