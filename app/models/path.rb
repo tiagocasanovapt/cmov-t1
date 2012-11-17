@@ -18,6 +18,8 @@ class Path < ActiveRecord::Base
 		@dir = 1;
 	elsif !cs2.empty? && cs1.empty?
 		@dir = 2
+	elsif cs2.empty? && cs1.empty?
+        @dir = 0
 	else
 
 		if(cs1.size > 1) 
